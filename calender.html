@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Calendar Management App </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="month-header">
+            <div id="but">
+                <div><button id="backButton">&#8595</button>
+                    <!--&#10094 -->
+                </div>
+                <div id="monthDisplay"></div>
+                <div> <button id="nextButton">&#8593</button></div>
+            </div>
+            <div>
+                <div><button class="eventapply">New Event</button></div>
+            </div>
+        </div>
+
+        <ol id="days-of-week" class="day-of-week">
+            <li>Monday</li>
+            <li>Tuesday</li>
+            <li>Wednesday</li>
+            <li>Thursday</li>
+            <li>Friday</li>
+            <li>Saturday</li>
+            <li>Sunday</li>
+        </ol>
+        <div id="calender"></div>
+
+        
+    </div> <!-- <div> <a href="#" id="addeVent">&#8593;</a> </div> -->
+    <div class="popupevent">
+        <div id="newEventModal">
+            <div id="close">+</div>
+
+            <h2>New Event</h2>
+
+            <input id="eventTitleInput" type="text" placeholder="Add a Title" />
+            <span id="titleerror"></span>
+            <!-- <input id="team" type="text" placeholder="Select participants" /> -->
+            <br><br>
+            <label>Start Date</label>
+            <input type="date" id="initialDate">
+            <span id="error"></span>
+            <span>&nbsp;&nbsp;&nbsp;</span>
+            <label> Repeat</label>
+            <label class="switch">
+            <input type="checkbox" id="tbutton">
+            <span class="slider round"></span>
+            </label>
+            <div id="enddate">
+            <label>End Date</label><input type="date" id="finalDate">
+            </div>
+            <br><br>
+            <label>Timings:</label><br>
+            <label>From</label>
+            <input type="time" id="initialTime">
+            <label>to</label>
+            <input type="time" id="finalTiime"> <br><br>
+            <span id="errortime"></span>
+            <label for="discription">Message</label><br>
+            <textarea id="discription" name="discription" rows="5" cols="60" required
+                placeholder="Discription about event"></textarea><br>
+            <br>
+            <button id="saveButton">Save</button>
+            <!-- <button id="cancelButton">Cancel</button> -->
+        </div>
+
+
+        <div id="deleteEventModal">
+            <div id="close1">+</div>
+            <h2>Event Details</h2>
+            <label>Event : </label>
+            <input type="text" id="eventTitle" readonly> <br><br>
+            <label>Timings : </label>
+            <input type="date" id="eventdate">
+            <input type="time" id="eventStartTime">
+            <label>to</label>
+            <input type="time" id="eventEndTime">
+
+            <br><br>
+            <button id="saveChanges">Save changes</button><br><br>
+            <button id="deleteButton">Delete</button> <button id="deletechain">Delete All</button>
+        </div>
+
+        <!-- <div id="modalBackDrop"></div> -->
+    </div>
+    <!-- <script src="calstyleedit.js"></script> -->
+    <!-- </div> -->
+    <script src="index.js"></script>
+    <script src="eventstorage.js"></script>
+</body>
+
+</html>

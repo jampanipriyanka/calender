@@ -1,0 +1,260 @@
+body {
+    font-family: sans-serif;
+    font-weight: 100;
+    background:none ;
+    width: 75%;
+    margin: auto ;
+     
+  }
+  
+  ol,
+  li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    
+  }
+  
+  .container {
+    position: relative;
+    border: solid 1px #ace7e7;
+  }
+  
+  .month-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(98, 95, 247);
+    padding: 5px;
+    font-size: 20px;
+    
+  }
+  #eventapply{
+    display: grid;
+    justify-content: end;
+  }
+  
+  
+  .day-of-week {
+    color: black;
+    font-size: 18px;
+    background-color: rgb(255, 255, 255);
+    padding-bottom: 4px;
+    padding-top: 4px;
+    position: relative;
+  }
+  #but{
+    display: flex;
+    width:200px;
+    justify-content: space-around;
+
+  }
+  #backButton:hover,
+  #nextButton:hover
+  {
+    background-color: rgb(255, 160, 131);
+    border-radius: 5px; 
+  }
+  
+  .day-of-week,
+  .day {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+  
+  .day-of-week > * {
+    text-align: right;
+    padding-right: 5px;
+  }
+
+  #calender {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr) ; 
+    width: 100%;
+    grid-template-rows: repeat(6 ,minmax(50px,89px));
+    background-color: rgba(242, 248, 248, 0.774);  
+   }
+  .day {
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: white;
+    margin: 1px;
+     display: flex;
+     overflow: auto; 
+    align-content: space-around;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .day::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .day > * {
+    text-align: right;
+    padding-right: 5px;
+  }
+  .oddday,
+  .nextday{
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: rgb(223, 215, 215);
+    margin: 2px;
+    text-align:left;
+    justify-content: start;
+  }
+  
+  .padding {
+    cursor: default !important;
+  
+    background-color: rgb(231, 182, 125);
+    box-shadow: none !important;
+  }
+  .day:hover {
+    background-color: #9ebdf7;
+  }
+  .day + #currentDay{
+      background-color: rgba(170, 209, 253, 0.993);
+  }
+  .popupevent{
+    display: none;
+    padding: 25px;
+    background-color: rgba(0,0,0,0.7);
+    box-shadow: 0px 0px 3px black;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0px;
+    position: absolute;
+    font-family: sans-serif;
+    justify-content: center;
+  }
+  #newEventModal{
+    padding: 25px;
+    background-color: #b4d1e0;
+    box-shadow: 0px 0px 3px black;
+    border-radius: 5px;
+    height: 350px;
+    width: 600px;
+    top: 100px;
+    position: relative;
+    font-family: sans-serif;
+  }
+  .eventapply{
+    cursor: pointer;
+    padding: 4px;
+    margin-left: 400px;
+    border-radius: 5px;
+    
+  }
+  .eventapply:hover{
+    color: red;
+  }
+   .eventdiv{
+    background-color: rgba(0, 67, 119, 0.2);
+    display: block;
+    cursor: pointer;
+    color:rgb(0,67,119);
+    padding: 5px 3px;
+    border-radius: 3px;
+    align-self: center;
+    margin-bottom: 5px;
+    text-align: start;
+    overflow: clip;
+    width: 89%;
+    height: 15px;
+  }
+  .dayString{
+    background-color: blue;
+    padding: 2px;
+    display: flex;
+  }
+  #close ,
+  #close1{
+    color: black;
+    position: absolute;
+    top: 0%;
+    right: 10px;
+    font-size: 28px;
+    transform: rotate(45deg);
+    cursor: pointer;
+    font-weight: bold;
+  }
+  #deleteEventModal{
+    display: none;
+    padding: 25px;
+    background-color: #e8f4fa;
+    box-shadow: 0px 0px 3px black;
+    border-radius: 5px;
+    height: 250px;
+    width: 500px;
+    top: 100px;
+    position: relative;
+    font-family: sans-serif;
+  }
+  #enddate{
+    display: none;
+  }
+  #team{
+    text-align: end;
+    margin-left: 225px;
+  }
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 25px;
+    width: 25px;
+    left: 5px;
+    bottom: 0px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
